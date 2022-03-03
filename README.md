@@ -1,7 +1,7 @@
 # App Architecture
 
 <p align="center">
-  <img src="https://bloclibrary.dev/assets/bloc_architecture_full.png" />
+  <img src="https://bloclibrary.dev/assets/cubit_architecture_full.png" />
 </p>
 
 Using the bloc library allows us to separate our application into three layers:
@@ -73,16 +73,11 @@ _You don’t need to wrap any widgets to inherit anything, or need the context a
 ### Setup
 
 ```shell script
-$ git branch -m main develop
-$ git fetch origin
-$ git branch -u origin/develop develop
+$ git branch -m main
+$ git fetch origin main
+$ git branch -u origin main
 $ git remote set-head origin -a
 ```
-
-### How to add assets(images..)
-
-1. Add assets
-2. Run [FlutterGen](https://github.com/fluttergen)
 
 ### Run app
 
