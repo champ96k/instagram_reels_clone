@@ -88,3 +88,7 @@ $ flutter pub get
 $ flutter packages pub run build_runner build --delete-conflicting-outputs
 $ flutter run
 ```
+
+### Demo Video
+
+[![Watch the video](http://img.youtube.com/vi/3b-FcKnzhg4/hqdefault.jpg)](https://youtu.be/3b-FcKnzhg4)
