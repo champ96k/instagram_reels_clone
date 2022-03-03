@@ -16,53 +16,83 @@ class ReelsPage extends StatelessWidget {
     return SizedBox(
       height: _size.height,
       width: _size.width,
-      child: Stack(
-        children: [
-          ///[Right side] components
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Column(
-              children: const [
-                CircleAvatar(
-                  child: Icon(Icons.favorite),
-                  backgroundColor: Colors.white,
-                ),
-                CircleAvatar(
-                  child: Icon(Icons.comment),
-                  backgroundColor: Colors.white,
-                ),
-                CircleAvatar(
-                  child: Icon(Icons.share),
-                  backgroundColor: Colors.white,
-                ),
-              ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Stack(
+          children: [
+            ///[Right side] components
+            Positioned(
+              bottom: _size.height * 0.06,
+              right: 0.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  CircleAvatar(
+                    maxRadius: 18.0,
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.black54,
+                      size: 16.0,
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                  SizedBox(height: 8.0),
+                  CircleAvatar(
+                    maxRadius: 18.0,
+                    child: Icon(
+                      Icons.comment,
+                      color: Colors.black54,
+                      size: 16.0,
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                  SizedBox(height: 8.0),
+                  CircleAvatar(
+                    maxRadius: 18.0,
+                    child: Icon(
+                      Icons.share,
+                      color: Colors.black54,
+                      size: 16.0,
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                ],
+              ),
             ),
-          ),
 
-          Positioned(
-            bottom: 0.0,
-            right: 0.0,
-            left: 0.0,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  videoDuration,
-                  style: _textTheme.bodyText2,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 4.0),
-                Text(
-                  videoTitle,
-                  style: _textTheme.bodyText2,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
+            Positioned(
+              bottom: _size.height * 0.01,
+              right: 0.0,
+              left: 0.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    videoDuration,
+                    style: _textTheme.bodyText2!.copyWith(
+                      color: Colors.white,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4.0),
+                  SizedBox(
+                    width: _size.width * 0.8,
+                    child: Text(
+                      videoTitle,
+                      style: _textTheme.bodyText2!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

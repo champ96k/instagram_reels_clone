@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:instagram_reels/core/dependency_injection/service_loactor.dart';
@@ -8,7 +9,11 @@ import 'package:instagram_reels/screen/home_screen.dart';
 
 void main() {
   serviceLoactor();
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -23,10 +28,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider<ReelsCubit>(
-        create: (context) => ReelsCubit(
-          repository: GetIt.I<ReelsRepository>(),
-        ),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider<ReelsCubit>(
+            create: (context) => ReelsCubit(
+              repository: GetIt.I<ReelsRepository>(),
+            ),
+          ),
+        ],
         child: const HomeScreen(),
       ),
     );
