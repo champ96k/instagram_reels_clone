@@ -21,6 +21,8 @@ Using the bloc library allows us to separate our application into three layers:
 
 - [Dart 2.12.0+ (stable channel)](https://github.com/dart-lang/sdk/wiki/Installing-beta-and-dev-releases-with-brew,-choco,-and-apt-get#installing)
 
+- [Flutter <= 2.5.0 (stable channel)](https://docs.flutter.dev/development/tools/sdk/releases)
+
 ## Environment
 
 <img height="520px" src="https://i0.wp.com/resocoder.com/wp-content/uploads/2019/08/Clean-Architecture-Flutter-Diagram.png?w=556&ssl=1" align="right" />
